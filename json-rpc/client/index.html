@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rpc example</title>
+  <script type="application/javascript" src="../node_modules/simple-jsonrpc-js/simple-jsonrpc-js.js"></script>
+</head>
+
+<body>
+<p class="paragraph"></p>
+<script>
+  const jrpc = simple_jsonrpc.connect_xhr('http://127.0.0.1:5676/rpc');
+  jrpc.call('add', [2, 3]).then(function (result) {
+    document.getElementsByClassName('paragraph')[0].innerHTML = 'add(2, 3) result: ' + result + '<br>';
+  });
+
+</script>
+</body>
+
+</html>
